@@ -12,7 +12,7 @@
 check*.onnx
 
 # ignore the following folder name
-build
+# build
 install
 
 datasets/COCO/annotations/*

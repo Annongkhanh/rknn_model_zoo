@@ -1,0 +1,2 @@
+/home/an/Downloads/android-ndk-r19c-linux-x86_64/android-ndk-r19c/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar qc libfileutils.a CMakeFiles/fileutils.dir/file_utils.c.o
+/usr/bin/llvm-ranlib libfileutils.a

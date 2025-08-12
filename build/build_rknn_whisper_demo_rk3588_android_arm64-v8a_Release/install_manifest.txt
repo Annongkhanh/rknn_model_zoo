@@ -1,0 +1,12 @@
+/home/an/ekoios/rknn_model_zoo/install/rk3588_android_arm64-v8a/rknn_whisper_demo/./rknn_whisper_demo
+/home/an/ekoios/rknn_model_zoo/install/rk3588_android_arm64-v8a/rknn_whisper_demo/./model/test_en.wav
+/home/an/ekoios/rknn_model_zoo/install/rk3588_android_arm64-v8a/rknn_whisper_demo/./model/test_zh.wav
+/home/an/ekoios/rknn_model_zoo/install/rk3588_android_arm64-v8a/rknn_whisper_demo/./model/vocab_en.txt
+/home/an/ekoios/rknn_model_zoo/install/rk3588_android_arm64-v8a/rknn_whisper_demo/./model/vocab_zh.txt
+/home/an/ekoios/rknn_model_zoo/install/rk3588_android_arm64-v8a/rknn_whisper_demo/./model/mel_80_filters.txt
+/home/an/ekoios/rknn_model_zoo/install/rk3588_android_arm64-v8a/rknn_whisper_demo/model/whisper_decoder_base.rknn
+/home/an/ekoios/rknn_model_zoo/install/rk3588_android_arm64-v8a/rknn_whisper_demo/model/whisper_decoder_base_20s.rknn
+/home/an/ekoios/rknn_model_zoo/install/rk3588_android_arm64-v8a/rknn_whisper_demo/model/whisper_encoder_base.rknn
+/home/an/ekoios/rknn_model_zoo/install/rk3588_android_arm64-v8a/rknn_whisper_demo/model/whisper_encoder_base_20s.rknn
+/home/an/ekoios/rknn_model_zoo/install/rk3588_android_arm64-v8a/rknn_whisper_demo/lib/librknnrt.so
+/home/an/ekoios/rknn_model_zoo/install/rk3588_android_arm64-v8a/rknn_whisper_demo/lib/librga.so

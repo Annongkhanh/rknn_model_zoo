@@ -1,0 +1,23 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
+# The set of languages for which implicit dependencies are needed:
+set(CMAKE_DEPENDS_LANGUAGES
+  )
+
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/an/ekoios/rknn_model_zoo/examples/whisper/cpp/main.cc" "CMakeFiles/rknn_whisper_demo.dir/main.cc.o" "gcc" "CMakeFiles/rknn_whisper_demo.dir/main.cc.o.d"
+  "/home/an/ekoios/rknn_model_zoo/examples/whisper/cpp/process.cc" "CMakeFiles/rknn_whisper_demo.dir/process.cc.o" "gcc" "CMakeFiles/rknn_whisper_demo.dir/process.cc.o.d"
+  "/home/an/ekoios/rknn_model_zoo/examples/whisper/cpp/rknpu2/whisper.cc" "CMakeFiles/rknn_whisper_demo.dir/rknpu2/whisper.cc.o" "gcc" "CMakeFiles/rknn_whisper_demo.dir/rknpu2/whisper.cc.o.d"
+  )
+
+# Targets to which this target links.
+set(CMAKE_TARGET_LINKED_INFO_FILES
+  "/home/an/ekoios/rknn_model_zoo/build/build_rknn_whisper_demo_rk3588_android_arm64-v8a_Release/utils.out/CMakeFiles/fileutils.dir/DependInfo.cmake"
+  "/home/an/ekoios/rknn_model_zoo/build/build_rknn_whisper_demo_rk3588_android_arm64-v8a_Release/utils.out/CMakeFiles/audioutils.dir/DependInfo.cmake"
+  )
+
+# Fortran module output directory.
+set(CMAKE_Fortran_TARGET_MODULE_DIR "")
