@@ -9,6 +9,7 @@ from onnxsim import simplify
 import torch
 import numpy as np
 import argparse
+from whisper.model import disable_sdpa
 import warnings
 warnings.filterwarnings("ignore", category=UserWarning)
 
@@ -41,31 +42,34 @@ if __name__ == '__main__':
     parser.add_argument('--n_mels', type=int, required=False, default= 80, help='number of mels')
     args = parser.parse_args()
 
-    print('whisper available_models: ', whisper.available_models())
-    model = setup_model(args.model_type)
-    x_mel, encoder_output, x_tokens = setup_data(model, args.n_mels)
+    # Wrap inside the disable_sdpa context
+    with disable_sdpa():
+        print('whisper available_models: ', whisper.available_models())
+        model = setup_model(args.model_type)
+        x_mel, encoder_output, x_tokens = setup_data(model, args.n_mels)
 
-    save_encoder_model_path = "../model/whisper_encoder_{}.onnx".format(args.model_type)
-    save_decoder_model_path = "../model/whisper_decoder_{}.onnx".format(args.model_type)
-    torch.onnx.export(
-        model.encoder, 
-        (x_mel), 
-        save_encoder_model_path, 
-        input_names=["x"], 
-        output_names=["out"],
-        opset_version=12
-    )
+        save_encoder_model_path = "../model/whisper_encoder_{}.onnx".format(args.model_type)
+        save_decoder_model_path = "../model/whisper_decoder_{}.onnx".format(args.model_type)
 
-    torch.onnx.export(
-        model.decoder, 
-        (x_tokens, encoder_output), 
-        save_decoder_model_path, 
-        input_names=["tokens", "audio"], 
-        output_names=["out"], 
-        opset_version=12
-    )
+        torch.onnx.export(
+            model.encoder, 
+            (x_mel), 
+            save_encoder_model_path, 
+            input_names=["x"], 
+            output_names=["out"],
+            opset_version=14
+        )
 
-    simplify_onnx_model(save_encoder_model_path)
-    print("\nThe encoder model is saved in:", save_encoder_model_path)
-    simplify_onnx_model(save_decoder_model_path)
-    print("The decoder model is saved in:", save_decoder_model_path)    
+        torch.onnx.export(
+            model.decoder, 
+            (x_tokens, encoder_output), 
+            save_decoder_model_path, 
+            input_names=["tokens", "audio"], 
+            output_names=["out"], 
+            opset_version=14
+        )
+
+        simplify_onnx_model(save_encoder_model_path)
+        print("\nThe encoder model is saved in:", save_encoder_model_path)
+        simplify_onnx_model(save_decoder_model_path)
+        print("The decoder model is saved in:", save_decoder_model_path)
